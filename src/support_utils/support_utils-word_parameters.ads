@@ -23,6 +23,7 @@ package Support_Utils.Word_Parameters is
    Change_Parameters_Character        : Character := '#';
    Change_Language_Character          : Character := '~';
    Help_Character                     : Character := '?';
+   Show_Inflections                   : String    := "ShowInflections";
 
    --  These files are used by the program if requested, but not necessary
    --  They are all text files and human readable

@@ -20,7 +20,8 @@ package Latin_Utils.Config is
 
    type Configuration_Type is (Developer_Version, User_Version, Only_Meanings);
 
-   type Method_Type is (Interactive, Command_Line_Input, Command_Line_Files);
+   type Method_Type is (Interactive, Command_Line_Input, Command_Line_Files,
+        Command_Line_Show_Inflections);
    Method : Method_Type := Interactive;
 
    type Language_Type is (Latin_To_English, English_To_Latin);

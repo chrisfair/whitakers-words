@@ -37,8 +37,6 @@ pragma Elaborate (Support_Utils.Word_Parameters);
 procedure Process_Input (Configuration : Configuration_Type;
                          Command_Line : String := "")
 is
-   -- use Inflections_Package.Integer_IO;
-   -- use Inflection_Record_IO;
    use Ada.Text_IO;
 
    procedure Delete_If_Open (Filename : String; Dict_Name : Dictionary_Kind) is
@@ -176,7 +174,8 @@ begin
       if Trim (Command_Line) /= ""  then
          Words_Engine.Parse.Parse_Line (Configuration, Command_Line);
       end if;
-
+   elsif Method = Command_Line_Show_Inflections then
+      Put  (Command_Line);
    else
       Banner.Print_Main_Banner (Start_File_Character,
         Change_Parameters_Character, Help_Character);

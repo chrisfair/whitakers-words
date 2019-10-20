@@ -87,7 +87,9 @@ begin
             Output_Name : constant String :=
               Trim (Ada.Command_Line.Argument (2));
          begin
-            if Input_Name (1) = Change_Language_Character  then
+            if Input_Name = Show_Inflections then
+               Method := Command_Line_Show_Inflections;
+            elsif Input_Name (1) = Change_Language_Character  then
                if Input_Name'Length > 1 then
                   Change_Language (Input_Name (2));
                   Arguments_Start := 2;
@@ -157,7 +159,6 @@ begin
                Input_Line := Head (
                  Trim (Input_Line) & " " & Ada.Command_Line.Argument (I), 250);
             end loop;
-            --Ada.TEXT_IO.PUT_LINE ("To PARSE >" & TRIM (INPUT_LINE));
             Process_Input (Configuration, Trim (Input_Line));
          end More_Arguments;
       end if;
